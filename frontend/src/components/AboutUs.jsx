@@ -39,7 +39,7 @@ export default function AboutUs() {
             🏢 من نحن؟
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 font-sora tracking-tight leading-tight">
-            خلف مديري... شركة <span className="text-[#004bfc]">رقمه</span>
+            خلف مديري... شركةُ <span className="text-[#004bfc]">رقمه</span>
           </h2>
         </div>
 
