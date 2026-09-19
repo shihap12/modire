@@ -183,15 +183,11 @@ export default function Feedback() {
     >
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#004bfc]/10 text-[#004bfc] text-xs font-semibold mb-4 border border-[#004bfc]/20">
-          💬 ثقة مئات الشركات والمنشآت
-        </div>
+
         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 font-sora tracking-tight leading-tight">
           آراء عملائنا (الفيدباك)
         </h2>
-        <p className="text-slate-600 text-base mt-3 max-w-2xl mx-auto leading-relaxed">
-          شريط تفاعلي مستمر لعرض آراء وتقييمات عملائنا في 4 صفوف أفقية متوازية وباتجاهات حركة متعاكسة.
-        </p>
+
       </div>
 
       {/* 4 Horizontal Ribbon Rows with alternating marquee direction */}
@@ -214,24 +210,6 @@ export default function Feedback() {
           <div className="animate-marquee-left">
             {[...reviewsRow2, ...reviewsRow2, ...reviewsRow2].map((rev, idx) => (
               <ReviewCard key={`r2-${idx}`} review={rev} />
-            ))}
-          </div>
-        </div>
-
-        {/* Row 3: Horizontal Marquee RIGHT ➡️ */}
-        <div className="flex overflow-hidden w-full">
-          <div className="animate-marquee-right">
-            {[...reviewsRow3, ...reviewsRow3, ...reviewsRow3].map((rev, idx) => (
-              <ReviewCard key={`r3-${idx}`} review={rev} />
-            ))}
-          </div>
-        </div>
-
-        {/* Row 4: Horizontal Marquee LEFT ⬅️ */}
-        <div className="flex overflow-hidden w-full">
-          <div className="animate-marquee-left">
-            {[...reviewsRow4, ...reviewsRow4, ...reviewsRow4].map((rev, idx) => (
-              <ReviewCard key={`r4-${idx}`} review={rev} />
             ))}
           </div>
         </div>

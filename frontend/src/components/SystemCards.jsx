@@ -170,7 +170,7 @@ export default function SystemCards({ onOpenChat }) {
               الأنظمة المتاحة
             </h2>
             <p className="text-slate-600 text-base mt-3 max-w-2xl leading-relaxed">
-              اختر النظام الأنسب لنشاطك التجاري وقم بإدارته بسهولة فائقة مع حلول الذكاء الاصطناعي من مديري.
+              اختار النظام اللي بدك إياه، والباقي علينا.
             </p>
           </div>
 
