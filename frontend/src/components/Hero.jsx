@@ -56,15 +56,15 @@ export default function Hero({ onOpenChat }) {
       dir="rtl"
       style={{ backgroundColor: 'var(--bg-main)' }}
     >
-      {/* Grid pattern layer */}
+      {/* Subtle grid overlay — semi-transparent so background shows */}
       <div
         aria-hidden="true"
         style={{
           position: 'absolute',
           inset: 0,
           backgroundImage: `
-            linear-gradient(to right, rgba(0,0,0,0.06) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(0,0,0,0.06) 1px, transparent 1px)
+            linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px)
           `,
           backgroundSize: '64px 64px',
           backgroundPosition: '0 0',
@@ -114,7 +114,14 @@ export default function Hero({ onOpenChat }) {
             </h1>
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a href="#systems" className="bg-[#004bfc] text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30">
+            <a 
+              href="#systems" 
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('systems')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="bg-[#004bfc] text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30 cursor-pointer"
+            >
               الأنظمة المتاحة
             </a>
             <button onClick={onOpenChat} className="bg-white text-slate-800 px-8 py-3 rounded-full font-medium border border-slate-200 hover:bg-slate-50 transition-colors flex items-center gap-2">

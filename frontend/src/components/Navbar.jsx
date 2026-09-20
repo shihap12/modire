@@ -3,6 +3,19 @@ import React, { useState } from 'react';
 export default function Navbar({ showLogo = true, onOpenChat }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const scrollToSection = (e, id) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="relative">
       <nav
@@ -11,7 +24,7 @@ export default function Navbar({ showLogo = true, onOpenChat }) {
         dir="rtl"
       >
         {/* Right side: Logo + مديري */}
-        <div className="flex items-center gap-2.5 cursor-pointer select-none">
+        <div onClick={scrollToTop} className="flex items-center gap-2.5 cursor-pointer select-none">
           <div
             id="nav-logo-target"
             className="w-9 h-9 flex items-center justify-center flex-shrink-0 relative"
@@ -42,9 +55,9 @@ export default function Navbar({ showLogo = true, onOpenChat }) {
 
         {/* Middle: Desktop nav links */}
         <div className="hidden md:flex items-center gap-10 px-16">
-          <a href="#systems" className="text-base font-medium transition-colors hover:text-[#004bfc]" style={{ color: '#3a3530' }}>الأنظمة المتاحة</a>
-          <a href="#feedback" className="text-base font-medium transition-colors hover:text-[#004bfc]" style={{ color: '#3a3530' }}>الفيدباك</a>
-          <a href="#about" className="text-base font-medium transition-colors hover:text-[#004bfc]" style={{ color: '#3a3530' }}>من نحن؟</a>
+          <a href="#systems" onClick={(e) => scrollToSection(e, 'systems')} className="text-base font-medium transition-colors hover:text-[#004bfc]" style={{ color: '#3a3530' }}>الأنظمة المتاحة</a>
+          <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="text-base font-medium transition-colors hover:text-[#004bfc]" style={{ color: '#3a3530' }}>من نحن؟</a>
+          <a href="#feedback" onClick={(e) => scrollToSection(e, 'feedback')} className="text-base font-medium transition-colors hover:text-[#004bfc]" style={{ color: '#3a3530' }}>آراء العملاء</a>
         </div>
 
         {/* Left side */}
@@ -97,9 +110,9 @@ export default function Navbar({ showLogo = true, onOpenChat }) {
           style={{ backgroundColor: 'var(--bg-main)', borderBottom: '1.5px solid #101010' }}
           dir="rtl"
         >
-          <a href="#systems" className="px-6 py-4 text-lg font-medium border-b border-black/10" style={{ color: '#3a3530' }} onClick={() => setMenuOpen(false)}>الأنظمة المتاحة</a>
-          <a href="#feedback" className="px-6 py-4 text-lg font-medium border-b border-black/10" style={{ color: '#3a3530' }} onClick={() => setMenuOpen(false)}>الفيدباك</a>
-          <a href="#about" className="px-6 py-4 text-lg font-medium border-b border-black/10" style={{ color: '#3a3530' }} onClick={() => setMenuOpen(false)}>من نحن؟</a>
+          <a href="#systems" className="px-6 py-4 text-lg font-medium border-b border-black/10" style={{ color: '#3a3530' }} onClick={(e) => scrollToSection(e, 'systems')}>الأنظمة المتاحة</a>
+          <a href="#about" className="px-6 py-4 text-lg font-medium border-b border-black/10" style={{ color: '#3a3530' }} onClick={(e) => scrollToSection(e, 'about')}>من نحن؟</a>
+          <a href="#feedback" className="px-6 py-4 text-lg font-medium border-b border-black/10" style={{ color: '#3a3530' }} onClick={(e) => scrollToSection(e, 'feedback')}>آراء العملاء</a>
           <button 
             className="px-6 py-4 text-lg font-medium text-right cursor-pointer" 
             style={{ color: '#004bfc' }} 

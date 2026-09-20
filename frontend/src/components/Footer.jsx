@@ -35,11 +35,38 @@ export default function Footer() {
               منصة حجز مواعيد لبناء الأنظمة الإدارية المتخصصة. احجز موعدك عبر الشات بوت وابدأ رحلتك الرقمية.
             </p>
             <div className="flex flex-wrap gap-3 mt-2">
-              <a href="#systems" className="text-xs text-slate-400 hover:text-white transition-colors">الأنظمة المتاحة</a>
+              <a 
+                href="#systems" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('systems')?.scrollIntoView({ behavior: 'smooth' });
+                }} 
+                className="text-xs text-slate-400 hover:text-white transition-colors cursor-pointer"
+              >
+                الأنظمة المتاحة
+              </a>
               <span className="text-slate-700">·</span>
-              <a href="#feedback" className="text-xs text-slate-400 hover:text-white transition-colors">الفيدباك</a>
+              <a 
+                href="#about" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                }} 
+                className="text-xs text-slate-400 hover:text-white transition-colors cursor-pointer"
+              >
+                من نحن؟
+              </a>
               <span className="text-slate-700">·</span>
-              <a href="#about" className="text-xs text-slate-400 hover:text-white transition-colors">من نحن؟</a>
+              <a 
+                href="#feedback" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('feedback')?.scrollIntoView({ behavior: 'smooth' });
+                }} 
+                className="text-xs text-slate-400 hover:text-white transition-colors cursor-pointer"
+              >
+                آراء العملاء
+              </a>
             </div>
           </div>
 

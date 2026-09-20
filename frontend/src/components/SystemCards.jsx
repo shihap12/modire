@@ -154,7 +154,7 @@ export default function SystemCards({ onOpenChat }) {
   return (
     <section 
       id="systems" 
-      className="w-full py-24 border-t border-slate-200/60 relative overflow-hidden" 
+      className="w-full py-24 border-t border-slate-200/60 relative overflow-hidden scroll-mt-16" 
       dir="rtl" 
       style={{ backgroundColor: 'var(--bg-main)' }}
     >
